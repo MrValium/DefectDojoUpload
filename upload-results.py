@@ -5,9 +5,9 @@ import os
 import requests
 
 def upload_results(host, user, api_key, scanner, result_file, engagement_id, verify=False): # set verify to False if ssl cert is self-signed
-    API_URL = "https://"+host+"/api/v2"
+    API_URL = "http://"+host+"/api/v2"
     IMPORT_SCAN_URL = API_URL+ "/import-scan/"
-    AUTH_TOKEN = "ApiKey " + user + ":" + api_key
+    AUTH_TOKEN = "Token " + api_key
 
     headers = dict()
     json = dict()
@@ -29,13 +29,15 @@ def upload_results(host, user, api_key, scanner, result_file, engagement_id, ver
     #   "lead":"/api/v1/users/1/",
     #   "scan_type": "Bandit Scan"
     # }
-    json['minimum_severity'] = "Low"
+    #json['minimum_severity'] = "Low"
     json['scan_date'] = datetime.now().strftime("%Y-%m-%d")
-    json['verified'] = False
-    json['tags'] = ""
-    json['active'] = False
-    json['engagement'] = "/api/v1/engagements/"+ engagement_id + "/"
-    json['lead'] ="/api/v1/users/"+ "1" + "/"
+    #json['verified'] = False
+    #json['tags'] = ""
+    #json['active'] = False
+    json['test_title']='ENGAGEMENT1vv'
+    json['engagement_name'] = "ENGAGEMENT1"#"/api/v2/engagements/"+ engagement_id + "/"
+    #json['lead'] =""
+    json['product_name']='Prodotto1'
     json['scan_type'] = scanner
     print(json)
 
@@ -48,6 +50,8 @@ def upload_results(host, user, api_key, scanner, result_file, engagement_id, ver
     # print r.request.headers
     # print r.status_code
     # print r.text
+    print (response)
+    print ("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     return response.status_code
 
 
@@ -80,3 +84,62 @@ if __name__ == "__main__":
          print("Successfully uploaded the results to Defect Dojo")
     else:
          print("Something went wrong, please debug " + str(result))
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+def upload_scan(self, engagement_id, scan_type, file, active, verified, close_old_findings, skip_duplicates, scan_date, tags=None, build=None, version=None, branch_tag=None, commit_hash=None, minimum_severity="Info", auto_group_by=None):
+        """Uploads and processes a scan file.
+        :param application_id: Application identifier.
+        :param file_path: Path to the scan file to be uploaded.
+        """
+        if build is None:
+            build = ''
+
+        with open(file, 'rb') as f:
+             filedata = f.read()
+
+        self.logger.debug("filedata:")
+        self.logger.debug(filedata)
+
+        data = {
+            'file': filedata,
+            'engagement': ('', engagement_id),
+            'scan_type': ('', scan_type),
+            'active': ('', active),
+            'verified': ('', verified),
+            'close_old_findings': ('', close_old_findings),
+            'skip_duplicates': ('', skip_duplicates),
+            'scan_date': ('', scan_date),
+            'tags': ('', tags),
+            'build_id': ('', build),
+            'version': ('', version),
+            'branch_tag': ('', branch_tag),
+            'commit_hash': ('', commit_hash),
+            'minimum_severity': ('', minimum_severity),
+            # 'push_to_jira': ('', True)
+        }
+
+        if auto_group_by:
+            data['auto_group_by'] = (auto_group_by, '')
+
+        """
+        TODO: implement these parameters:
+          lead
+          test_type
+          scan_date
+        """
+
+        return self._request(
+            'POST', 'import-scan/',
+            files=data
+        )
+
