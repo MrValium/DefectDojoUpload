@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+   <suppress>
+      <sha1>c6d45aea33bb291d0c7c285bc603b5a05994f82d</sha1>
+   </suppress>
+</suppressions>
