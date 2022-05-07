@@ -4,4 +4,13 @@
       <sha1>510d9afcfce1fa9a2086906ab87b9989973c251c</sha1>
       <cve>CVE-2022-22965</cve>
    </suppress>
+   <suppress>
+      <sha1>8fb7d78b14e2deb8fec430498c64418ec0a2d983</sha1>
+      <cve>CVE-2021-42340</cve>
+   </suppress>
+   <suppress>
+      <sha1>8fb7d78b14e2deb8fec430498c64418ec0a2d983</sha1>
+      <cve>CVE-2021-30640</cve>
+   </suppress>
+   
 </suppressions>
