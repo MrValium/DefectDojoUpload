@@ -9,5 +9,11 @@
    <suppress>
       <cve>CVE-2021-30640</cve>
    </suppress>
+   <suppress>
+        <notes><![CDATA[
+        This suppresses a specific cve for any test.jar in any directory.
+        ]]></notes>
+        <filePath regex="true">.*\demo-0.0.1-SNAPSHOT.jar</filePath>
+    </suppress>
    
 </suppressions>
