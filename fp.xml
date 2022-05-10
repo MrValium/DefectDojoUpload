@@ -9,7 +9,7 @@
       <cve>CVE-2021-42340</cve>
    </suppress>
    <suppress>
-      <sha1>53ddfc5cfdf438a1d3346fc2912c3e3049a8cb76</sha1>
+      <sha1>510d9afcfce1fa9a2086906ab87b9989973c251c</sha1>
       <cve>CVE-2022-22965</cve>
    </suppress>   
 </suppressions>
