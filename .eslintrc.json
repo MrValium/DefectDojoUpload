@@ -8,6 +8,7 @@
         //"eslint:recommended",
         //"plugin:react/recommended",
         "plugin:security/recommended"
+        "plugin:xss/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
