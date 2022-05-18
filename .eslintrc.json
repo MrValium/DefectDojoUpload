@@ -1,14 +1,10 @@
 {
     "env": {
-        //"browser": false,
         "node": true,
         "es2021": true
     },
     "extends": [
-        //"eslint:recommended",
-        //"plugin:react/recommended",
         "plugin:security/recommended"
-        //"plugin:xss/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -18,7 +14,6 @@
         "sourceType": "module"
     },
     "plugins": [
-        //"react",
         "security",
         "xss"
     ],
