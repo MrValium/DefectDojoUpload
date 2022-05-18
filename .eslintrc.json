@@ -29,8 +29,8 @@
         "security/detect-non-literal-require": 2,
         "security/detect-object-injection": 2,
         "security/detect-possible-timing-attacks": 1,
-        "security/detect-pseudoRandomBytes": 2,
-        "xss/no-mixed-html": 2,
-        "xss/no-location-href-assign": 2
+        "security/detect-pseudoRandomBytes": 2//,
+        //"xss/no-mixed-html": 2,
+        //"xss/no-location-href-assign": 2
     }
 }
