@@ -5,7 +5,7 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:weblint-security/recommended"
+        "plugin:weblint-security/recommended",
         "plugin:security/recommended"
     ],
     "parserOptions": {
