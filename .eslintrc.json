@@ -4,9 +4,6 @@
         "es2021": true
     },
     "extends": [
-        "eslint:recommended",
-        "plugin:weblint-security/recommended",
-        "plugin:weblint-security/react",
         "plugin:security/recommended"
     ],
     "parserOptions": {
@@ -18,8 +15,7 @@
     },
     "plugins": [
         "security",
-        "xss",
-        "weblint-security"
+        "xss"
     ],
     "rules": {
         "security/detect-non-literal-fs-filename": 2,
