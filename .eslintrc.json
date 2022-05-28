@@ -7,12 +7,12 @@
         "plugin:security/recommended"
     ],
     "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true,
-            "modules": true,
-        },
-        "ecmaVersion": "latest",
-        "sourceType": "module"
+            "modules": true
+        }
     },
     "plugins": [
         "security",
