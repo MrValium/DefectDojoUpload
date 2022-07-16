@@ -1,7 +1,7 @@
 def zap_get_alerts(zap, baseurl, denylist, out_of_scope_dict):
     st = 0
     pg = 5000
-    false_positives = [(10096, 'http://example.com')]
+    false_positives = [(10096, 'http://example.com'),(10021,'http://192.168.49.2:31190/swagger-ui/swagger-ui.css')]
     alerts = zap.core.alerts(baseurl=baseurl, start=st, count=pg)
     while len(alerts) > 0:
         for alert in alerts:
