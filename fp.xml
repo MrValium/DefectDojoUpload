@@ -7,21 +7,21 @@
    
    
    <suppress> 
-      <! -- This suppresses a specific cve for any dependency in any directory that has the specified sha1 checksum. -->
+      <!-- This suppresses a specific cve for any dependency in any directory that has the specified sha1 checksum. -->
       <sha1>8f91f60f628075701fde72bb5a43a33feeb27e93</sha1>
       <cve>CVE-2022-22965</cve>
    </suppress>
    
    
    <suppress> 
-      <! -- This suppresses a specific cve for any dependency in any directory that has the specified sha1 checksum. -->
+      <!-- This suppresses a specific cve for any dependency in any directory that has the specified sha1 checksum. -->
       <sha1>f9290db7324194921c236ad9a940467f55304fa7</sha1>
       <cve>CVE-2016-1000027</cve>
    </suppress>
    
    
    <suppress> 
-      <! -- This suppresses a specific cve for any dependency in any directory that has the specified sha1 checksum. -->
+      <!-- This suppresses a specific cve for any dependency in any directory that has the specified sha1 checksum. -->
       <sha1>f9290db7324194921c236ad9a940467f55304fa7</sha1>
       <cve>CVE-2022-22965</cve>
    </suppress>
