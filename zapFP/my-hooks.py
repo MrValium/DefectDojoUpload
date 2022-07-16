@@ -6,16 +6,25 @@ def zap_get_alerts(zap, baseurl, denylist, out_of_scope_dict):
     alerts = zap.core.alerts(baseurl=baseurl, start=st, count=pg)
     alert_dict = {}
     alert_count = 0
+    found=0
     while len(alerts) > 0:
         logging.debug('Reading ' + str(pg) + ' alerts from ' + str(st))
         alert_count += len(alerts)
         for alert in alerts:
+            found=0
             alert_id = alert.get('id')
             url = alert.get('url')
             plugin_id = alert.get('pluginId')
             for fp in false_positives:
                 if plugin_id == fp[0] and url == fp[1]:
                     zap.alert.update_alerts_confidence(alert_id, 0)
+                    found=1
+            if (plugin_id not in alert_dict and found==0):
+                alert_dict[plugin_id] = []
+            if (found==0):
+                alert_dict[plugin_id].append(alert)
+
         st += pg
         alerts = zap.core.alerts(start=st, count=pg)
-    return alerts
+    logging.debug('Total number of alerts: ' + str(alert_count))
+    return alert_dict
