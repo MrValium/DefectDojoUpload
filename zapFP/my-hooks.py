@@ -1,4 +1,6 @@
 import logging
+
+@hook(wrap=True)
 def zap_get_alerts(zap, baseurl, denylist, out_of_scope_dict):
     st = 0
     pg = 5000
