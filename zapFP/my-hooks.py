@@ -12,6 +12,6 @@ def zap_get_alerts(zap, baseurl, denylist, out_of_scope_dict):
             for fp in false_positives:
                 if plugin_id == fp[0] and url == fp[1]:
                     zap.alert.update_alerts_confidence(alert_id, '0')
-        st += pg
-        alerts = zap.core.alerts(start=st, count=pg)
+            st += pg
+            alerts = zap.core.alerts(start=st, count=pg)
     return alerts
