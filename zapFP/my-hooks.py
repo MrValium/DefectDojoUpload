@@ -1,6 +1,5 @@
 import logging
 
-@hook(wrap=True)
 def zap_get_alerts(zap, baseurl, denylist, out_of_scope_dict):
     st = 0
     pg = 5000
@@ -18,6 +17,7 @@ def zap_get_alerts(zap, baseurl, denylist, out_of_scope_dict):
             url = alert.get('url')
             plugin_id = alert.get('pluginId')
             for fp in false_positives:
+                logging.debug('BBBBBBBBB' +str(fp[0])+'---'+str(fp[1]))
                 if (plugin_id == fp[0] and url == fp[1]):
                     zap.alert.update_alerts_confidence(alert_id, '0')
                     found=1
