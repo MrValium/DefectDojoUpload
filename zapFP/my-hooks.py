@@ -23,8 +23,7 @@ def zap_get_alerts(zap, baseurl, denylist, out_of_scope_dict):
                 alert_dict[plugin_id] = []
             if (found==0):
                 alert_dict[plugin_id].append(alert)
-
-        st += pg
-        alerts = zap.core.alerts(start=st, count=pg)
+            st += pg
+            alerts = zap.core.alerts(start=st, count=pg)
     logging.debug('Total number of alerts: ' + str(alert_count))
     return alert_dict
